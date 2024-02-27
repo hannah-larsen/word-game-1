@@ -43,6 +43,7 @@ export default function Game({ target, synonyms }) {
           onChange={(newValue) => setUserInput(newValue)}
           onSubmit={() => onSubmitGuess()}
           firstLetter={showFirstLetter ? target[0] : null}
+          disabled={hasWon}
         />
         <Button size="lg" onClick={() => onSubmitGuess()}>
           Submit

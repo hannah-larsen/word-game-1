@@ -6,6 +6,7 @@ export default function WordInput({
   onChange,
   onSubmit,
   firstLetter,
+  disabled = false,
 }) {
   const inputRefs = useRef(new Array(length).fill(null));
 
@@ -62,6 +63,7 @@ export default function WordInput({
           key={index}
           ref={(el) => (inputRefs.current[index] = el)}
           type="text"
+          disabled={disabled}
           value={value[index] || ""}
           onChange={(e) => handleInputChange(e, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
