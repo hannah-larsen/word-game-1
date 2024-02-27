@@ -30,7 +30,7 @@ async function getRandomWordFromFile(filePath) {
 }
 
 export default async function Home() {
-  const cookies = cookies();
+  const cookieStore = cookies();
   const filePath = path.join(process.cwd(), "./public/word-list.txt");
   const word = await getRandomWordFromFile(filePath);
   const synonyms = await getSynonyms(word);
