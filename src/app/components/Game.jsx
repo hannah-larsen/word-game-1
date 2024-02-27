@@ -31,7 +31,7 @@ export default function Game({ target, synonyms }) {
         <div className="flex flex-wrap gap-2 justify-center">
           {synonyms.map((word, index) => (
             <SynonymFragment
-              hidden={!hasWon && index > 2 + guessCount}
+              hidden={!hasWon && index > guessCount}
               word={word}
               key={index}
             />
