@@ -28,7 +28,7 @@ async function getRandomWordFromFile(filePath) {
   return words[randomIndex].trim();
 }
 
-export default async function Home() {
+export default async function Home({ params, searchParams }) {
   const filePath = path.join(process.cwd(), "./public/word-list.txt");
   const word = await getRandomWordFromFile(filePath);
   const synonyms = await getSynonyms(word);
