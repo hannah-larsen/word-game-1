@@ -1,6 +1,7 @@
 import Game from "./components/Game";
 import fs from "fs";
 import path from "path";
+import { cookies } from "next/headers";
 
 async function getSynonyms(word) {
   try {
@@ -28,7 +29,8 @@ async function getRandomWordFromFile(filePath) {
   return words[randomIndex].trim();
 }
 
-export default async function Home({ params, searchParams }) {
+export default async function Home() {
+  const cookies = cookies();
   const filePath = path.join(process.cwd(), "./public/word-list.txt");
   const word = await getRandomWordFromFile(filePath);
   const synonyms = await getSynonyms(word);
