@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function WordInput({
   length,
@@ -56,11 +57,25 @@ export default function WordInput({
     }
   };
 
+  const variants = {
+    animate: (i) => ({
+      y: [0, -10, 0],
+      transition: {
+        delay: i * 0.1,
+        duration: 0.3,
+      },
+    }),
+    initial: { y: 0 },
+  };
+
   return (
     <div className="flex w-full justify-center">
       {Array.from({ length }).map((_, index) => (
-        <input
+        <motion.input
           key={index}
+          variants={variants}
+          animate={disabled ? "animate" : "initial"}
+          custom={index}
           ref={(el) => (inputRefs.current[index] = el)}
           type="text"
           disabled={disabled}

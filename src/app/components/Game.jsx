@@ -17,9 +17,9 @@ export default function Game({ target, synonyms }) {
       setHasWon(true);
     } else {
       setFeedbackMessage("Try again buddy!");
+      setUserInput("");
     }
     setGuessCount((guessCount) => guessCount + 1);
-    setUserInput("");
   }
 
   return (
