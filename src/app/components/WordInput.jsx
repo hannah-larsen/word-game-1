@@ -59,10 +59,10 @@ export default function WordInput({
 
   const variants = {
     animate: (i) => ({
-      y: [0, -10, 0],
+      y: [0, -15, 0],
       transition: {
         delay: i * 0.1,
-        duration: 0.3,
+        duration: 0.5,
       },
     }),
     initial: { y: 0 },
@@ -83,7 +83,9 @@ export default function WordInput({
           onChange={(e) => handleInputChange(e, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
           placeholder={index === 0 && firstLetter ? firstLetter : ""}
-          className="flex-1 text-center border-2 border-gray-300 rounded-md m-1 max-w-14 text-2xl"
+          className={`flex-1 text-center border-2 ${
+            disabled && "bg-green-100 border-green-300"
+          } rounded-md m-1 max-w-14 text-2xl`}
           style={{
             minWidth: "0",
             aspectRatio: "1 / 1",
