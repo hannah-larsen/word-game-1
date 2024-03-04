@@ -1,6 +1,6 @@
 export default function Footer({}) {
   return (
-    <footer className="bg-orange-200 text-black w-full">
+    <footer className="text-black w-full">
       <div className="flex justify-center items-center w-full py-5">
         <span className="font-light text-sm tracking-tight">
           Made by Ekim and Hannah with 💛
