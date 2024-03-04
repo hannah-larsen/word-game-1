@@ -2,7 +2,7 @@ import Game from "./components/Game";
 import fs from "fs";
 import path from "path";
 import { cookies } from "next/headers";
-import { getSynonyms } from "./api/thesaurus-com";
+import { getSynonyms } from "./api/marriam-webster";
 
 async function getRandomWordFromFile(filePath) {
   const data = fs.readFileSync(filePath, "utf8");
