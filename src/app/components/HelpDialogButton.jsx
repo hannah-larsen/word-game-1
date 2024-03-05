@@ -17,7 +17,7 @@ export default function HelpDialogButton({}) {
       <DialogTrigger asChild>
         <Button variant="ghost">
           <HelpCircle className="mr-2 h-4 w-4" />
-          <span className="max-md:hidden">Help</span>
+          Help
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md flex flex-col">

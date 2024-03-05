@@ -20,7 +20,7 @@ export default function SynonymFragment({ word, hidden }) {
   }, [word]);
   return (
     <Badge variant={hidden ? "outline" : "secondary"}>
-      <p className="md:text-base">{hidden ? hiddenWord : word}</p>
+      <p className="text-base">{hidden ? hiddenWord : word}</p>
     </Badge>
   );
 }

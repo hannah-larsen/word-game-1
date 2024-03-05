@@ -11,27 +11,23 @@ import {
 import { Button } from "./ui/button";
 import { UserCircle } from "lucide-react";
 
-export default function SettingsDialogButton({}) {
+export default function SettingsDialogButton({ className }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="ghost">
+        <Button variant="ghost" className={className}>
           <UserCircle className="mr-2 h-4 w-4" />
-          <span className="max-md:hidden">Settings</span>
+          Settings
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md flex flex-col">
         <DialogHeader>
-          <DialogTitle>How to play</DialogTitle>
+          <DialogTitle>Settings</DialogTitle>
           <DialogDescription>
-            A basic into the world of unnamed word game.
+            Your changes will be saved automatically.
           </DialogDescription>
         </DialogHeader>
-        <p>
-          Given synonyms (and sometimes related words), guess the root word.
-          Each wrong guess unlocks a new hint. Try to get it in as few guesses
-          as possible!
-        </p>
+        <p>Coming soon!</p>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
             <Button>Close</Button>
