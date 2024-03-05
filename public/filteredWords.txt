@@ -45,7 +45,6 @@ abstract
 absurd
 abundant
 abuse
-abuser
 abusive
 abut
 abuzz
@@ -851,7 +850,6 @@ basket
 basque
 bass
 bassist
-bastard
 baste
 bastion
 batch
@@ -1057,8 +1055,6 @@ bishop
 bison
 bisque
 bistro
-bitch
-bitchy
 bite
 bitter
 bitty
@@ -1172,9 +1168,6 @@ bohemian
 boil
 boiler
 bold
-bolero
-boll
-bollocks
 bologna
 bolster
 bolt
@@ -1407,7 +1400,6 @@ bullhorn
 bullion
 bullpen
 bullseye
-bullshit
 bully
 bulwark
 bumble
@@ -1829,7 +1821,6 @@ chimney
 chimp
 chin
 china
-chink
 chino
 chintz
 chip
@@ -2029,7 +2020,6 @@ cobweb
 coca
 cocaine
 cochlear
-cock
 cockpit
 cocktail
 cocky
@@ -2512,7 +2502,6 @@ culture
 culvert
 cumin
 cunning
-cunt
 cupboard
 cupcake
 cupola
@@ -3906,7 +3895,6 @@ filament
 file
 filer
 filet
-filial
 filigree
 fill
 filler
@@ -6955,8 +6943,6 @@ nickname
 nicotine
 niece
 nifty
-nigga
-nigger
 nigh
 night
 nightcap
@@ -6987,18 +6973,11 @@ nominal
 nominate
 nominee
 none
-nonfat
 nonfatal
-nonhuman
-nonissue
-nonplus
 nonsense
 nonstick
 nonstop
 nontoxic
-nonunion
-nonuser
-nonwhite
 noodle
 nook
 noon
@@ -7759,7 +7738,6 @@ pique
 piracy
 piranha
 pirate
-piss
 pistol
 piston
 pita
@@ -8345,8 +8323,6 @@ raccoon
 race
 racer
 racial
-racism
-racist
 rack
 racket
 racy
@@ -8406,7 +8382,6 @@ rankle
 ransack
 ransom
 rant
-rape
 rapid
 rapidity
 rapist
@@ -8792,8 +8767,6 @@ retro
 retrofit
 retry
 return
-returnee
-returner
 reunion
 reunite
 reusable
@@ -8801,14 +8774,12 @@ reuse
 revamp
 reveal
 revel
-reveler
 revelry
 revenge
 revenue
 revere
 reverend
 reverent
-reverie
 reversal
 reverse
 revert
@@ -9473,8 +9444,6 @@ shipyard
 shire
 shirk
 shirt
-shit
-shitty
 shiver
 shoal
 shock
@@ -9751,11 +9720,9 @@ sluice
 slum
 slumber
 slump
-slur
 slurp
 slurry
 slush
-slut
 smack
 small
 smallpox
@@ -10478,11 +10445,8 @@ swanky
 swap
 swarm
 swarthy
-swastika
 swat
 swatch
-swath
-swathe
 sway
 swear
 sweat
@@ -10568,7 +10532,6 @@ tailspin
 taint
 take
 takeaway
-takeoff
 takeout
 takeover
 taker
@@ -11871,10 +11834,6 @@ whoever
 whole
 whoop
 whoosh
-whop
-whopper
-whore
-whorl
 whose
 wick
 wicked
