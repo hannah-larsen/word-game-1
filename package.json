@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "wordgen": "node ./src/app/utils/filterWords.js"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
