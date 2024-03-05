@@ -1,5 +1,4 @@
 aback
-abalone
 abandon
 abate
 abbey
@@ -6603,7 +6602,6 @@ mite
 miter
 mitigate
 mitt
-mitten
 mixer
 mixture
 mnemonic
@@ -8993,7 +8991,6 @@ rudder
 ruddy
 rude
 rudiment
-ruffian
 ruffle
 rugby
 rugged
@@ -10109,7 +10106,6 @@ stack
 stadium
 staff
 staffer
-stag
 stage
 stagger
 stagnant
@@ -10613,7 +10609,6 @@ tarmac
 tarnish
 tarot
 tarp
-tarpon
 tarragon
 tart
 tartan
@@ -10916,7 +10911,6 @@ tonal
 tonality
 tone
 toner
-tong
 tongue
 tonic
 tonight
@@ -11916,7 +11910,6 @@ windfall
 windmill
 window
 windpipe
-windrow
 windsurf
 windup
 windy
