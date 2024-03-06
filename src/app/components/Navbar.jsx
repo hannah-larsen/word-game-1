@@ -23,9 +23,9 @@ export default function Navbar() {
         </div>
         <div className="text-center">
           <a href="/" className="text-center">
-            <span className="font-semibold text-xl tracking-tight">
+            <p className="text-2xl tracking-tight font-serif">
               Unnamed Word Game
-            </span>
+            </p>
           </a>
         </div>
         <div className="flex flex-1 justify-end">

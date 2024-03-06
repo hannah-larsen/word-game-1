@@ -11029,8 +11029,6 @@ trio
 trip
 triple
 triplet
-tripod
-triptych
 trite
 triumph
 trivia
