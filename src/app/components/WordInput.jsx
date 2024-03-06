@@ -84,9 +84,7 @@ export default function WordInput({
           onKeyDown={(e) => handleKeyDown(e, index)}
           placeholder={index === 0 && firstLetter ? firstLetter : ""}
           className={`flex-1 text-center border-2  ${
-            disabled
-              ? "bg-green-200 border-green-400"
-              : "bg-input border-border"
+            disabled ? "bg-lime-200 border-lime-400" : "bg-input border-border"
           } rounded-md m-1 max-w-14 text-2xl`}
           style={{
             minWidth: "0",
