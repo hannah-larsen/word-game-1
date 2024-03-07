@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import { cookies } from "next/headers";
 import { getSynonyms } from "./api/datamuse";
+import { Suspense } from "react";
 
 async function getRandomWordFromFile(filePath) {
   const data = fs.readFileSync(filePath, "utf8");
@@ -16,5 +17,9 @@ export default async function Home() {
   const filePath = path.join(process.cwd(), "./public/filteredWords.txt");
   const word = await getRandomWordFromFile(filePath);
   const synonyms = await getSynonyms(word); // Fetch all synonyms for the word
-  return <Game target={word.toUpperCase()} synonyms={synonyms.slice(0, 7)} />;
+  return (
+    <Suspense>
+      <Game target={word.toUpperCase()} synonyms={synonyms.slice(0, 7)} />
+    </Suspense>
+  );
 }
