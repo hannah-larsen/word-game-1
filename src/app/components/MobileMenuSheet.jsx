@@ -5,6 +5,7 @@ import {
   SheetFooter,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
   SheetTrigger,
 } from "./ui/sheet";
 import { Menu } from "lucide-react";
@@ -23,7 +24,12 @@ export default function SheetDemo() {
       </SheetTrigger>
       <SheetContent side="left">
         <SheetHeader>
-          <SheetTitle className="text-left">Untitled Word Game</SheetTitle>
+          <SheetTitle className="text-left text-2xl tracking-tight font-serif font-normal">
+            Relatle
+          </SheetTitle>
+          <SheetDescription className="text-left min-w-0 -mt-1">
+            The daily synonym word game.
+          </SheetDescription>
         </SheetHeader>
         <div className="flex flex-col items-start gap-4 py-4 flex-1">
           <Button variant="ghost" disabled>

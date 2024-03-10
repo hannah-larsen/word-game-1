@@ -23,8 +23,9 @@ export default function Navbar() {
         </div>
         <div className="text-center">
           <a href="/" className="text-center">
-            <p className="text-2xl tracking-tight font-serif">
-              Unnamed Word Game
+            <h1 className="text-2xl tracking-tight font-serif">Relatle</h1>
+            <p className="text-xs text-muted-foreground min-w-0 -mt-1 max-md:hidden">
+              The daily synonym word game.
             </p>
           </a>
         </div>

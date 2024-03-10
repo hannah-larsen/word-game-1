@@ -7,7 +7,7 @@ export default function WordInput({
   onChange,
   onSubmit,
   firstLetter,
-  disabled = false,
+  gameState = "ongoing",
 }) {
   const inputRefs = useRef(new Array(length).fill(null));
 
@@ -58,15 +58,29 @@ export default function WordInput({
   };
 
   const variants = {
-    animate: (i) => ({
+    jump: (i) => ({
       y: [0, -15, 0],
       transition: {
         delay: i * 0.1,
-        duration: 0.5,
+        duration: 0.4,
       },
     }),
     initial: { y: 0 },
+    shake: {
+      x: [0, -10, 10, -10, 10, 0],
+      transition: { type: "tween", duration: 0.5 },
+    },
   };
+
+  function getAnimationState(gameState) {
+    if (gameState === "lose") {
+      return "shake";
+    } else if (gameState === "win") {
+      return "jump";
+    } else {
+      return "initial";
+    }
+  }
 
   return (
     <div className="flex w-full justify-center">
@@ -74,18 +88,20 @@ export default function WordInput({
         <motion.input
           key={index}
           variants={variants}
-          animate={disabled ? "animate" : "initial"}
+          animate={getAnimationState(gameState)}
           custom={index}
           ref={(el) => (inputRefs.current[index] = el)}
           type="text"
-          disabled={disabled}
+          disabled={gameState !== "ongoing"}
           value={value[index] || ""}
           onChange={(e) => handleInputChange(e, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
           placeholder={index === 0 && firstLetter ? firstLetter : ""}
-          className={`flex-1 text-center border-2  ${
-            disabled ? "bg-lime-200 border-lime-400" : "bg-input border-border"
-          } rounded-md m-1 max-w-14 text-2xl`}
+          className={`flex-1 text-center border-2  
+            ${gameState === "win" && "bg-lime-200 border-lime-400"}
+            ${gameState === "lose" && "bg-red-200 border-red-400"}
+            ${gameState === "ongoing" && "bg-input border-border"}
+           rounded-md m-1 max-w-14 text-2xl`}
           style={{
             minWidth: "0",
             aspectRatio: "1 / 1",

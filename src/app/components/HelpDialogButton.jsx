@@ -24,14 +24,18 @@ export default function HelpDialogButton({}) {
         <DialogHeader>
           <DialogTitle>How to play</DialogTitle>
           <DialogDescription>
-            A basic into the world of unnamed word game.
+            Can you identify the word in the fewest guesses?
           </DialogDescription>
         </DialogHeader>
         <p>
-          Given synonyms (and sometimes related words), guess the root word.
-          Each wrong guess unlocks a new hint. Try to get it in as few guesses
-          as possible!
+          Synonyms and related words will pop up on the screen. Try to guess the
+          correct word in the fewest number of tries!
         </p>
+        <p>
+          After each failed attempt to guess the correct word, a new
+          synonym/related word will appear.
+        </p>
+        <p>You can reveal the first letter if you need a hint.</p>
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
             <Button>Close</Button>
