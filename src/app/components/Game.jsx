@@ -5,7 +5,7 @@ import SynonymFragment from "./SynonymFragment";
 import { Button } from "./ui/button";
 import GameOverDialogButton from "./GameOverDialogButton";
 
-export default function Game({ target, synonyms }) {
+export default function Game({ number = 10, target, synonyms, definition }) {
   const [userInput, setUserInput] = useState("");
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [guessCount, setGuessCount] = useState(0);
@@ -53,11 +53,19 @@ export default function Game({ target, synonyms }) {
             Submit
           </Button>
         ) : (
-          <GameOverDialogButton gameState={gameState} />
+          <GameOverDialogButton
+            gameState={gameState}
+            target={target}
+            number={number}
+            definition={definition}
+            guessCount={guessCount}
+          />
         )}
+        <p>{feedbackMessage}</p>
         <Button
           variant="ghost"
           className="mt-2"
+          disabled={gameState !== "ongoing"}
           onClick={() =>
             setShowFirstLetter((showFirstLetter) => {
               return !showFirstLetter;
@@ -66,10 +74,14 @@ export default function Game({ target, synonyms }) {
         >
           Show/Hide first letter
         </Button>
-        <Button variant="ghost" onClick={() => onGiveUp()}>
+        <Button
+          variant="ghost"
+          disabled={gameState !== "ongoing"}
+          onClick={() => onGiveUp()}
+        >
           Give Up
         </Button>
-        <p>{feedbackMessage}</p>
+
         <p className="text-orange-50">{target}</p>
       </div>
     </div>

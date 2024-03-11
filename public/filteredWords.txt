@@ -10751,7 +10751,6 @@ thorax
 thorn
 thorny
 thorough
-thou
 thousand
 thrall
 thrash

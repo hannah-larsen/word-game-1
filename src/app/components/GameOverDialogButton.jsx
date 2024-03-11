@@ -11,10 +11,18 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 import { Button } from "./ui/button";
+import Timer from "./Timer";
 import { Trophy, HeartCrack } from "lucide-react";
 import { useEffect, useState } from "react";
+import ShareResultsButton from "./ShareResultsButton";
 
-export default function GameOverDialogButton({ gameState = "ongoing" }) {
+export default function GameOverDialogButton({
+  gameState = "ongoing",
+  number,
+  target,
+  definition,
+  guessCount,
+}) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -54,10 +62,22 @@ export default function GameOverDialogButton({ gameState = "ongoing" }) {
           <DialogTitle>
             {gameState === "win" ? "You got it!" : "Game over"}
           </DialogTitle>
-          <DialogDescription>Relatle #123</DialogDescription>
+          <DialogDescription>Relatle #{number}</DialogDescription>
         </DialogHeader>
-        <p>Good job! Today&apos;s word was SLIME.</p>
-        <p>Meaning of slime here.</p>
+        <p>
+          {gameState === "win" ? "Good job!" : "Better luck next time!"} The
+          hidden word was <b>{target}</b>. <br />{" "}
+          <i className="text-muted-foreground">{definition}</i>
+        </p>
+        <p>
+          New daily relatle in: <Timer />
+        </p>
+        <ShareResultsButton
+          win={gameState === "win"}
+          guessCount={guessCount}
+          number={number}
+        />
+
         <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
             <Button>Close</Button>
