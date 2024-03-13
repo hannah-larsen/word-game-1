@@ -30,14 +30,14 @@ export const metadata = {
   generator: "Next.js",
   applicationName: "Relatle",
   openGraph: {
-    title: "Relatle - The Daily Synonym Game",
+    title: "Relatle - Guess the Word by Its Synonyms",
     description:
       "Can you guess today's word by looking at it's synonyms? See if you can beat your friends and get today's relatle!",
     url: "https://relatle.lol",
     siteName: "Relatle",
     images: [
       {
-        url: "https://www.hexcodle.com/og_image.png",
+        url: "https://www.relatle.lol/og_image.png",
         width: 1200,
         height: 630,
       },
