@@ -29,7 +29,7 @@ export const metadata = {
   ],
   generator: "Next.js",
   applicationName: "Relatle",
-  opengraph: {
+  openGraph: {
     title: "Relatle - The Daily Synonym Game",
     description:
       "Can you guess today's word by looking at it's synonyms? See if you can beat your friends and get today's relatle!",
