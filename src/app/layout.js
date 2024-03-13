@@ -37,7 +37,7 @@ export const metadata = {
     siteName: "Relatle",
     images: [
       {
-        url: "https://www.relatle.lol/og_image.png",
+        url: "https://www.relatle.lol/og-image.png",
         width: 1200,
         height: 630,
       },
