@@ -52,7 +52,7 @@ export default function SettingsDialogButton({ className }) {
         />
         <Button
           variant="destructive"
-          disabled={destructInput !== "tabula rasa"}
+          disabled={destructInput.toLowerCase() !== "tabula rasa"}
           onClick={() => clearSaveData()}
         >
           Erase my savefile
