@@ -109,8 +109,6 @@ export default function Game({ number = 10, target, synonyms, definition }) {
         >
           Give Up
         </Button>
-
-        <p className="text-orange-50">{target}</p>
       </div>
     </div>
   );
