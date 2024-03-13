@@ -15,7 +15,7 @@ export default function Game({ number = 10, target, synonyms, definition }) {
 
   function onSubmitGuess() {
     if (userInput === target) {
-      setFeedbackMessage("You got it!");
+      setFeedbackMessage("");
       setGameState("win");
       setSaveData(number, {
         solved: true,
