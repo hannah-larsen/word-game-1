@@ -78,11 +78,11 @@ export default function GameOverDialogButton({
           number={number}
         />
 
-        <DialogFooter className="sm:justify-start">
+        {/*        <DialogFooter className="sm:justify-start">
           <DialogClose asChild>
             <Button>Close</Button>
           </DialogClose>
-        </DialogFooter>
+          </DialogFooter>*/}
       </DialogContent>
     </Dialog>
   );

@@ -19,18 +19,18 @@ export default function ShareResultsButton({ win, guessCount, number }) {
   }
   return (
     <Popover>
-      <PopoverTrigger>
-        <Button
-          className=""
-          variant="link"
-          onClick={() => {
-            navigator.clipboard.writeText(generateShareableString());
-          }}
-        >
+      <Button
+        className=""
+        asChild
+        onClick={() => {
+          navigator.clipboard.writeText(generateShareableString());
+        }}
+      >
+        <PopoverTrigger>
           <Share2 className="mr-2 h-4 w-4" />
           Share my results
-        </Button>
-      </PopoverTrigger>
+        </PopoverTrigger>
+      </Button>
       <PopoverContent className="text-xs p-2 w-auto -mt-2">
         Copied to clipboard!
       </PopoverContent>
