@@ -28,7 +28,7 @@ export default function GameOverDialogButton({
   useEffect(() => {
     const timer = setTimeout(() => {
       setOpen(gameState !== "ongoing");
-    }, 1000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, [gameState]);

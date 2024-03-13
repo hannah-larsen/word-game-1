@@ -83,7 +83,7 @@ export default function WordInput({
   }
 
   return (
-    <div className="flex w-full justify-center">
+    <div className="flex w-full justify-center px-8">
       {Array.from({ length }).map((_, index) => (
         <motion.input
           key={index}

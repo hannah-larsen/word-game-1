@@ -15,7 +15,7 @@ export default function Footer({}) {
             </a>
           </Button>
         </div>
-        <span className="font-light text-xs text-muted-foreground">
+        <span className="font-light text-xs text-muted-foreground max-sm:pb-2">
           Made by Ekim and Hannah with 🤎
         </span>
       </div>

@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WordInput from "./WordInput";
 import SynonymFragment from "./SynonymFragment";
 import { Button } from "./ui/button";
 import GameOverDialogButton from "./GameOverDialogButton";
+import { getSaveData, setSaveData } from "../hooks/useSavestate";
 
 export default function Game({ number = 10, target, synonyms, definition }) {
   const [userInput, setUserInput] = useState("");
@@ -16,6 +17,12 @@ export default function Game({ number = 10, target, synonyms, definition }) {
     if (userInput === target) {
       setFeedbackMessage("You got it!");
       setGameState("win");
+      setSaveData(number, {
+        solved: true,
+        numGuesses: guessCount + 1,
+        numHints: showFirstLetter ? 1 : 0,
+        time: 0,
+      });
     } else {
       setFeedbackMessage("Try again buddy!");
       setUserInput("");
@@ -25,12 +32,33 @@ export default function Game({ number = 10, target, synonyms, definition }) {
 
   function onGiveUp() {
     setGameState("lose");
+    setSaveData(number, {
+      solved: false,
+      numGuesses: guessCount + 1,
+      numHints: showFirstLetter ? 1 : 0,
+      time: 0,
+    });
     setUserInput(target);
   }
 
+  useEffect(() => {
+    const gameData = getSaveData(number);
+    if (gameData && gameData.solved) {
+      setGameState("win");
+      setUserInput(target);
+      setGuessCount(gameData.numGuesses);
+      return;
+    }
+
+    if (gameData && !gameData.solved) {
+      setGameState("lose");
+      setUserInput(target);
+    }
+  }, []);
+
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-3xl flex flex-col items-center p-2 md:pt-16 max-md:pt-8 gap-4">
+      <div className="w-full max-w-3xl flex flex-col items-center p-2 md:pt-16 max-md:pt-4 gap-4">
         <div className="flex flex-wrap gap-2 justify-center max-w-xl max-md:px-4">
           {synonyms.map((word, index) => (
             <SynonymFragment
@@ -61,7 +89,7 @@ export default function Game({ number = 10, target, synonyms, definition }) {
             guessCount={guessCount}
           />
         )}
-        <p>{feedbackMessage}</p>
+        <p className="text-sm">{feedbackMessage}</p>
         <Button
           variant="ghost"
           className="mt-2"
