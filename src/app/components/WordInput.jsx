@@ -61,7 +61,8 @@ export default function WordInput({
     jump: (i) => ({
       y: [0, -15, 0],
       transition: {
-        delay: i * 0.1,
+        type: "tween",
+        delay: i * 0.08,
         duration: 0.4,
       },
     }),
@@ -83,7 +84,7 @@ export default function WordInput({
   }
 
   return (
-    <div className="flex w-full justify-center px-8">
+    <div className="flex w-full justify-center px-4">
       {Array.from({ length }).map((_, index) => (
         <motion.input
           key={index}

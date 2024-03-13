@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { Share2 } from "lucide-react";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
-const url = "https://word-game-umber.vercel.app/";
+const url = "https://relatle.lol/";
 
 export default function ShareResultsButton({ win, guessCount, number }) {
   function generateShareableString() {
