@@ -12,13 +12,39 @@ export const metadata = {
   title: "Relatle - The Daily Synonym Game",
   description:
     "Can you guess today's word by looking at it's synonyms? Inspired by wordle, but for thesaurus heads.",
-  keywords:
-    "synonyms, synonym, guessing game, daily challenge, daily game, wordle, puzzle, word game, word puzzle",
-  og_title: "Relatle - The Daily Synonym Game",
-  og_description:
-    "Can you guess today's word by looking at it's synonyms? See if you can beat your friends and get today's relatle!",
-  og_image: "https://www.hexcodle.com/og_image.png",
-  themeColor: "#fff6eb",
+  keywords: [
+    "synonyms",
+    "synonym",
+    "guessing game",
+    "daily challenge",
+    "daily game",
+    "wordle",
+    "puzzle",
+    "word game",
+    "word puzzle",
+  ],
+  authors: [
+    { name: "Ekim Karabey", url: "https://ekimerton.github.io/" },
+    { name: "Hannah Larsen", url: "https://hannah-larsen.github.io/" },
+  ],
+  generator: "Next.js",
+  applicationName: "Relatle",
+  opengraph: {
+    title: "Relatle - The Daily Synonym Game",
+    description:
+      "Can you guess today's word by looking at it's synonyms? See if you can beat your friends and get today's relatle!",
+    url: "https://relatle.lol",
+    siteName: "Relatle",
+    images: [
+      {
+        url: "https://www.hexcodle.com/og_image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
