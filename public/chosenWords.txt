@@ -1,7 +1,7 @@
 brash
 chosen
 petrified
-luminous
+luminous [lucent, bright, glowing, aglow, lambent, illuminating, glow]
 criminal
 concise
 numbing
