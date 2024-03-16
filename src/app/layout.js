@@ -2,6 +2,7 @@ import "server-only";
 
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -55,6 +56,7 @@ export default function RootLayout({ children }) {
         <div className="flex-grow">
           {children}
           <Analytics />
+          <GoogleAnalytics gaId="G-J2WXFZ1W6W" />
         </div>
         <Footer />
       </body>
