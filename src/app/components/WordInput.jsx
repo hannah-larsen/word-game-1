@@ -98,11 +98,11 @@ export default function WordInput({
           onChange={(e) => handleInputChange(e, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
           placeholder={index === 0 && firstLetter ? firstLetter : ""}
-          className={`flex-1 text-center border-2  
+          className={`flex-1 text-center border-2 m-1 max-sm:m-0.5
             ${gameState === "win" && "bg-lime-200 border-lime-400"}
             ${gameState === "lose" && "bg-red-200 border-red-400"}
             ${gameState === "ongoing" && "bg-input border-border"}
-           rounded-md m-1 max-w-14 text-2xl`}
+           rounded-md max-w-14 text-2xl max-md:text-xl`}
           style={{
             minWidth: "0",
             aspectRatio: "1 / 1",
