@@ -3,9 +3,12 @@ chosen
 petrified
 luminous [lucent, bright, glowing, aglow, lambent, illuminating, glow]
 criminal [lawbreaker, unlawful, illegal, offender, villain, felon, illicit]
+fit [suitable, healthy, position, in shape, proper, relevant, insert]
 concise [succinct, brief, pithy, short, incisive, abridged, condensed]
 numbing
-vorpal
+quick
+joyful
+super
 exclaim
 fickle
 danger
