@@ -36,12 +36,9 @@ async function getDailyWord(dayNumber) {
     }
   } else {
     // Assuming getRandomWordFromFile is adjusted accordingly
-    const randomWord = await getRandomWordFromFile();
-    if (randomWord.synonyms.length === 0) {
-      // Fetch synonyms if not available
-      randomWord.synonyms = await getSynonyms(randomWord.word);
-    }
-    return randomWord;
+    const word = await getRandomWordFromFile();
+    const synonyms = await getSynonyms(word);
+    return { word, synonyms };
   }
 }
 

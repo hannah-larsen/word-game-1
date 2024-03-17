@@ -13,6 +13,7 @@ export const metadata = {
   title: "Relatle - The Daily Synonym Game",
   description:
     "Can you guess today's word by looking at it's synonyms? Inspired by wordle, but for thesaurus heads.",
+  metadataBase: new URL("https://relatle.lol"),
   keywords: [
     "synonyms",
     "synonym",

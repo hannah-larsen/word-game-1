@@ -2,8 +2,8 @@ brash
 chosen
 petrified
 luminous [lucent, bright, glowing, aglow, lambent, illuminating, glow]
-criminal
-concise
+criminal [lawbreaker, unlawful, illegal, offender, villain, felon, illicit]
+concise [succinct, brief, pithy, short, incisive, abridged, condensed]
 numbing
 vorpal
 exclaim
