@@ -3,10 +3,10 @@ import { Button } from "./ui/button";
 export default function Footer({}) {
   return (
     <footer className="text-black w-full">
-      <div className="flex justify-center items-center w-full py-2">
+      <div className="flex flex-col justify-center items-center w-full py-2">
         <div>
           <Button
-            className="max-md:hidden font-light text-xs text-muted-foreground underline-offset-1 decoration-current"
+            className="font-light text-xs text-muted-foreground underline-offset-1 decoration-current"
             asChild
             variant="link"
           >
@@ -15,7 +15,7 @@ export default function Footer({}) {
             </a>
           </Button>
         </div>
-        <span className="font-light text-xs text-muted-foreground max-sm:pb-2">
+        <span className="font-light text-xs text-muted-foreground pb-2">
           Made by Ekim and Hannah with 🤎
         </span>
       </div>
