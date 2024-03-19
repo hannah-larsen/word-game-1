@@ -10,15 +10,19 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
+import { Loader2 } from "lucide-react";
 import { Button } from "./ui/button";
 import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { UserCircle } from "lucide-react";
 import { useState } from "react";
 import { clearSaveData } from "../hooks/useSavestate";
+import { useRouter } from "next/navigation";
 
 export default function SettingsDialogButton({ className }) {
   const [destructInput, setDestructInput] = useState("");
+  const [resetLoading, setResetLoading] = useState(false);
+  const router = useRouter();
 
   return (
     <Dialog>
@@ -37,10 +41,7 @@ export default function SettingsDialogButton({ className }) {
         </DialogHeader>
         <p>More settings coming soon!</p>
         <h2 className="font-semibold -mb-4">Clear Progress</h2>
-        <p>
-          This action is permenant. A refresh may be needed to see changes after
-          erasing.
-        </p>
+        <p>This action is permenant. Make sure you&apos;re super sure!</p>
         <Label htmlFor="delete-progress-input">
           Type &quot;tabula rasa&quot; to confirm
         </Label>
@@ -53,8 +54,13 @@ export default function SettingsDialogButton({ className }) {
         <Button
           variant="destructive"
           disabled={destructInput.toLowerCase() !== "tabula rasa"}
-          onClick={() => clearSaveData()}
+          onClick={() => {
+            setResetLoading(true);
+            clearSaveData();
+            window.location.reload(true);
+          }}
         >
+          {resetLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           Erase my savefile
         </Button>
         {/*<DialogFooter className="sm:justify-start">

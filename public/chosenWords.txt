@@ -5,7 +5,9 @@ luminous [lucent, bright, glowing, aglow, lambent, illuminating, glow]
 criminal [lawbreaker, unlawful, illegal, offender, villain, felon, illicit]
 fit [suitable, healthy, position, in shape, proper, relevant, insert]
 concise [succinct, brief, pithy, short, incisive, abridged, condensed]
+cogent [convincing, sound, logical, valid, eloquent, clear, persuasive]
 numbing
+drole
 quick
 joyful
 super

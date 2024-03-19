@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import WordInput from "./WordInput";
 import SynonymFragment from "./SynonymFragment";
 import { Button } from "./ui/button";
+import { Badge } from "./ui/badge";
 import GameOverDialogButton from "./GameOverDialogButton";
 import { getSaveData, setSaveData } from "../hooks/useSavestate";
 
@@ -10,8 +11,10 @@ export default function Game({ number = 10, target, synonyms, definition }) {
   const [userInput, setUserInput] = useState("");
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [guessCount, setGuessCount] = useState(0);
+  const [hintCount, setHintCount] = useState(0);
   const [gameState, setGameState] = useState("ongoing");
-  const [showFirstLetter, setShowFirstLetter] = useState(false);
+
+  const scrambledTarget = target.split("").sort().join("");
 
   function onSubmitGuess() {
     if (userInput === target) {
@@ -20,7 +23,7 @@ export default function Game({ number = 10, target, synonyms, definition }) {
       setSaveData(number, {
         solved: true,
         numGuesses: guessCount + 1,
-        numHints: showFirstLetter ? 1 : 0,
+        numHints: guessCount,
         time: 0,
       });
     } else {
@@ -35,7 +38,7 @@ export default function Game({ number = 10, target, synonyms, definition }) {
     setSaveData(number, {
       solved: false,
       numGuesses: guessCount + 1,
-      numHints: showFirstLetter ? 1 : 0,
+      numHints: guessCount,
       time: 0,
     });
     setUserInput(target);
@@ -58,7 +61,13 @@ export default function Game({ number = 10, target, synonyms, definition }) {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-3xl flex flex-col items-center p-2 md:pt-16 max-md:pt-4 gap-4">
+      <div className="w-full max-w-3xl flex flex-col items-center p-2 gap-4">
+        <div className="min-h-16 flex justify-center items-center text-center">
+          <p className="text-base text-balance">
+            {hintCount >= 3 && <b>{scrambledTarget}: </b>}
+            {hintCount >= 2 && definition}
+          </p>
+        </div>
         <div className="flex flex-wrap gap-2 justify-center max-w-xl max-md:px-4">
           {synonyms.map((word, index) => (
             <SynonymFragment
@@ -73,7 +82,7 @@ export default function Game({ number = 10, target, synonyms, definition }) {
           value={userInput}
           onChange={(newValue) => setUserInput(newValue)}
           onSubmit={() => onSubmitGuess()}
-          firstLetter={showFirstLetter ? target[0] : null}
+          firstLetter={hintCount >= 1 ? target[0] : null}
           gameState={gameState}
         />
         {gameState === "ongoing" ? (
@@ -93,14 +102,17 @@ export default function Game({ number = 10, target, synonyms, definition }) {
         <Button
           variant="ghost"
           className="mt-2"
-          disabled={gameState !== "ongoing"}
+          disabled={gameState !== "ongoing" || hintCount > 2}
           onClick={() =>
-            setShowFirstLetter((showFirstLetter) => {
-              return !showFirstLetter;
+            setHintCount((count) => {
+              return count + 1;
             })
           }
         >
-          Show/Hide first letter
+          {hintCount === 0 && "📩 Get hint #1: First Letter"}
+          {hintCount === 1 && "🔍 Get hint #2: Definiton"}
+          {hintCount === 2 && "🧩 Get hint #3: Scrambled Word"}
+          {hintCount > 2 && "😬 Out of hints!"}
         </Button>
         <Button
           variant="ghost"
