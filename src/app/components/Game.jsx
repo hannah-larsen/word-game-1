@@ -96,6 +96,7 @@ export default function Game({ number = 10, target, synonyms, definition }) {
             number={number}
             definition={definition}
             guessCount={guessCount}
+            hintCount={hintCount}
           />
         )}
         <p className="text-sm">{feedbackMessage}</p>

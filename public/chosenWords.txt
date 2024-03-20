@@ -6,16 +6,16 @@ criminal [lawbreaker, unlawful, illegal, offender, villain, felon, illicit]
 fit [suitable, healthy, position, in shape, proper, relevant, insert]
 concise [succinct, brief, pithy, short, incisive, abridged, condensed]
 cogent [convincing, sound, logical, valid, eloquent, clear, persuasive]
-numbing
-drole
-quick
-joyful
-super
-exclaim
-fickle
-danger
-devious
-fracture
-mirage
-generous
-obtuse
+numbing [desensitizing, deadening, paralyzing, chilling, anesthetizing, dulling, freezing]
+drole [witty, amusing, humorous, funny, entertaining, comical, whimsical]
+quick [swift, fast, rapid, speedy, brisk, nimble, fleet]
+joyful [joyous, happy, delighted, elated, gleeful, jubilant, ecstatic]
+super [excellent, superb, outstanding, superior, remarkable, fantastic, exceptional]
+exclaim [shout, yell, cry out, proclaim, declare, vocalize, blurt]
+fickle [changeable, volatile, capricious, fluctuating, mercurial, inconstant, variable]
+danger [peril, risk, hazard, threat, jeopardy, menace, insecurity]
+devious [sly, cunning, underhanded, sneaky, crafty, wily, guileful]
+fracture [break, crack, split, fissure, rupture, shatter, cleave]
+mirage [illusion, hallucination, apparition, phantasm, delusion, fantasy, vision]
+generous [bountiful, benevolent, magnanimous, liberal, charitable, lavish, altruistic]
+obtuse [dull, slow, dense, dim, thick, blunt, insensitive]

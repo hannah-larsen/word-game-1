@@ -6,17 +6,31 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 
 const url = "https://relatle.lol/";
 
-export default function ShareResultsButton({ win, guessCount, number }) {
+export default function ShareResultsButton({
+  win,
+  guessCount,
+  hintCount,
+  number,
+}) {
   function generateShareableString() {
+    let shareString = "";
+
+    const guessesLine = `- In *${guessCount}* ${
+      guessCount === 1 ? "guess 🎯" : "guesses 🎯"
+    }`;
+    const hintsLine = `- Using *${hintCount}* ${
+      hintCount === 1 ? "hint 💡" : "hints 💡"
+    }`;
+
     if (win) {
-      return `I got relatle #${number} in ${guessCount} ${
-        guessCount === 1 ? "guess" : "guesses"
-      }! \n ${url}`;
+      shareString += `I won Relatle #${number}! 🎉\n${guessesLine}\n${hintsLine}\n\n Check it out: ${url} 🕹️`;
     } else {
-      return `I couldn't figure out relatle #${number}. \n ${url}`;
+      shareString += `Couldn't crack Relatle #${number} 😔\n${guessesLine}\n${hintsLine}\n\n🧐 Try it yourself: ${url} `;
     }
-    return "Error generating shareable string ;(";
+
+    return shareString;
   }
+
   return (
     <Popover>
       <Button

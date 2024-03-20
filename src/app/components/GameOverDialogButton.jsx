@@ -22,6 +22,7 @@ export default function GameOverDialogButton({
   target,
   definition,
   guessCount,
+  hintCount,
 }) {
   const [open, setOpen] = useState(false);
 
@@ -75,6 +76,7 @@ export default function GameOverDialogButton({
         <ShareResultsButton
           win={gameState === "win"}
           guessCount={guessCount}
+          hintCount={hintCount}
           number={number}
         />
 
