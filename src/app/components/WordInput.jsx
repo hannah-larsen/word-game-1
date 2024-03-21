@@ -102,7 +102,7 @@ export default function WordInput({
             ${gameState === "win" && "bg-lime-200 border-lime-400"}
             ${gameState === "lose" && "bg-red-200 border-red-400"}
             ${gameState === "ongoing" && "bg-input border-border"}
-           rounded-md max-w-14 text-3xl max-md:text-xl`}
+           rounded-md max-w-14 text-3xl max-sm:text-2xl`}
           style={{
             minWidth: "0",
             aspectRatio: "1 / 1",

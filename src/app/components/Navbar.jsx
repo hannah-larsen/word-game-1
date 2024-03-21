@@ -23,7 +23,9 @@ export default function Navbar() {
         </div>
         <div className="text-center">
           <a href="/" className="text-center">
-            <h1 className="text-2xl tracking-tight font-serif">Relatle</h1>
+            <h1 className="text-2xl max-sm:text-3xl tracking-tight font-serif font-medium">
+              Relatle
+            </h1>
             <p className="text-xs text-muted-foreground min-w-0 -mt-1 max-md:hidden">
               The daily synonym word game.
             </p>
