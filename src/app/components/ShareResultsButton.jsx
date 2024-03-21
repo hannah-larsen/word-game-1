@@ -15,17 +15,17 @@ export default function ShareResultsButton({
   function generateShareableString() {
     let shareString = "";
 
-    const guessesLine = `- In *${guessCount}* ${
+    const guessesLine = `In ${guessCount} ${
       guessCount === 1 ? "guess 🎯" : "guesses 🎯"
     }`;
-    const hintsLine = `- Using *${hintCount}* ${
+    const hintsLine = `Using ${hintCount} ${
       hintCount === 1 ? "hint 💡" : "hints 💡"
     }`;
 
     if (win) {
       shareString += `I got Relatle #${number}! 🎉\n${guessesLine}\n${hintsLine}\n\n${url}`;
     } else {
-      shareString += `I couldn't crack Relatle #${number} 😔\n${guessesLine}\n${hintsLine}\n\n${url}`;
+      shareString += `I couldn't crack Relatle #${number}. 😔\n${guessesLine}\n${hintsLine}\n\n${url}`;
     }
 
     return shareString;
