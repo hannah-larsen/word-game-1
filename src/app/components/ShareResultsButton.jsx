@@ -23,9 +23,9 @@ export default function ShareResultsButton({
     }`;
 
     if (win) {
-      shareString += `I won Relatle #${number}! 🎉\n${guessesLine}\n${hintsLine}\n\n${url}`;
+      shareString += `I got Relatle #${number}! 🎉\n${guessesLine}\n${hintsLine}\n\n${url}`;
     } else {
-      shareString += `Couldn't crack Relatle #${number} 😔\n${guessesLine}\n${hintsLine}\n\n${url}`;
+      shareString += `I couldn't crack Relatle #${number} 😔\n${guessesLine}\n${hintsLine}\n\n${url}`;
     }
 
     return shareString;
