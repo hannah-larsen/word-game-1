@@ -24,7 +24,7 @@ export default function HelpDialogButton({}) {
         <DialogHeader>
           <DialogTitle>How to play</DialogTitle>
           <DialogDescription>
-            Can you identify the word in the fewest guesses?
+            Can you identify the word from its synonyms?
           </DialogDescription>
         </DialogHeader>
         <p>
