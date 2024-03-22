@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`h-full ${inter.className} flex flex-col`}>
         <Navbar />
-        <div className="flex-grow">
+        <div className="flex-grow flex justify-center">
           {children}
           <Analytics />
           <GoogleAnalytics gaId="G-J2WXFZ1W6W" />
