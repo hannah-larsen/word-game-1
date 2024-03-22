@@ -18,6 +18,9 @@ export function getSaveData(gameNumber) {
 
 export function setSaveData(gameNumber, newData) {
   try {
+    if (gameNumber < 1) {
+      return;
+    }
     const saves = JSON.parse(localStorage.getItem("relatleSaves")) || {};
     const today = new Date();
     const formattedDate = today.toISOString().split("T")[0];
