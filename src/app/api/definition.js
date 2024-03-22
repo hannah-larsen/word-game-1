@@ -8,16 +8,28 @@ export async function getWordDefinition(word) {
     }
     const data = await response.json();
 
-    // Accessing the first definition of the first meaning of the word
+    // Check if data is valid
     if (
-      data.length > 0 &&
-      data[0].meanings.length > 0 &&
-      data[0].meanings[0].definitions.length > 0
+      data.length === 0 ||
+      !data[0].meanings ||
+      data[0].meanings.length === 0
     ) {
-      return data[0].meanings[0].definitions[0].definition;
-    } else {
       return "No definition found.";
     }
+
+    // Try to find an adjective definition first
+    for (const meaning of data[0].meanings) {
+      if (
+        meaning.partOfSpeech === "adjective" &&
+        meaning.definitions &&
+        meaning.definitions.length > 0
+      ) {
+        return meaning.definitions[0].definition; // Return the first definition of the adjective meaning
+      }
+    }
+
+    // If no adjective definition was found, return the first definition available
+    return data[0].meanings[0].definitions[0].definition;
   } catch (error) {
     console.error(`Failed to fetch definition for ${word}: ${error}`);
     return "An error occurred while fetching the definition.";
