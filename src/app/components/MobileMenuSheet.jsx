@@ -43,7 +43,6 @@ export default function MobileMenuSheet() {
             </a>
           </Button>
           <SettingsDialogButton />
-          <HelpDialogButton />
         </div>
         <div className="flex flex-col items-start gap-4 py-4 flex-1">
           <h2 className="font-medium">Check out our other links</h2>

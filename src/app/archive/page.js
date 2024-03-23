@@ -29,12 +29,12 @@ export default async function Page() {
             </p>
           </CardContent>
         </Card>
-        <div className="flex flex-col items-center">
-          <Button variant="link" className="w-min" asChild>
+        <div className="flex items-center justify-center flex-wrap">
+          <Button variant="link" className="max-w-1/4 text-red-700" asChild>
             <Link href={`/archive/-1`}>{`Relatle -1`}</Link>
           </Button>
           {Array.from({ length: number }, (_, i) => (
-            <Button variant="link" key={i} className="w-min" asChild>
+            <Button variant="link" key={i} className="max-w-1/4" asChild>
               <Link href={`/archive/${i + 1}`}>{`Relatle ${i + 1}`}</Link>
             </Button>
           ))}
