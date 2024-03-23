@@ -25,7 +25,7 @@ export default function MobileMenuSheet() {
           <div className="absolute top-0 right-0 h-2 w-2 bg-blue-500 rounded-full" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left">
+      <SheetContent side="left" className="overflow-scroll">
         <SheetHeader className="mb-2">
           <SheetTitle className="text-left text-2xl tracking-tight font-serif font-normal -mb-2">
             Relatle
