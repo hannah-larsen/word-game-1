@@ -30,6 +30,9 @@ export default async function Page() {
           </CardContent>
         </Card>
         <div className="flex flex-col items-center">
+          <Button variant="link" className="w-min" asChild>
+            <Link href={`/archive/-1`}>{`Relatle -1`}</Link>
+          </Button>
           {Array.from({ length: number }, (_, i) => (
             <Button variant="link" key={i} className="w-min" asChild>
               <Link href={`/archive/${i + 1}`}>{`Relatle ${i + 1}`}</Link>
