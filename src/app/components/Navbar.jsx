@@ -15,6 +15,7 @@ export default function Navbar() {
             <Link
               href={`/archive`}
               className="flex items-center justify-center"
+              tabIndex={-1}
             >
               <History className="mr-2 h-4 w-4" />
               Archive
