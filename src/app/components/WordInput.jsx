@@ -95,6 +95,7 @@ export default function WordInput({
           type="text"
           disabled={gameState !== "ongoing"}
           value={value[index] || ""}
+          tabIndex={value.length !== index && -1}
           onChange={(e) => handleInputChange(e, index)}
           onKeyDown={(e) => handleKeyDown(e, index)}
           placeholder={index === 0 && firstLetter ? firstLetter : ""}

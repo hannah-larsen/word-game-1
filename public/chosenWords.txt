@@ -10,6 +10,7 @@ numbing [desensitizing, deadening, paralyzing, chilling, anesthetizing, dulling,
 funny [amusing, humorous, comical, drole, entertaining, whimsical, witty]
 fracture [break, crack, split, fissure, rupture, shatter, cleave]
 fickle [changeable, volatile, capricious, fluctuating, mercurial, inconstant, variable]
+erudite
 exclaim [shout, yell, cry out, proclaim, declare, vocalize, blurt]
 obtuse [dull, slow, dense, dim, thick, blunt, insensitive]
 devious [sly, cunning, underhanded, sneaky, crafty, wily, guileful]
