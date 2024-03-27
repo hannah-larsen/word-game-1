@@ -9,7 +9,8 @@ export default async function Page() {
   const cookieStore = cookies();
   const number = getGameNumber();
   const { word, synonyms } = await getDailyWord(number);
-  const definition = await getWordDefinition(word);
+  // const definition = await getWordDefinition(word);
+  const definition = "Annoyingly insensitive or slow to understand.";
   return (
     <Suspense>
       <Game
