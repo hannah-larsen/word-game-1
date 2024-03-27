@@ -16,3 +16,4 @@ obtuse [dull, slow, dense, dim, thick, blunt, insensitive]
 devious [sly, cunning, underhanded, sneaky, crafty, wily, guileful]
 mirage [illusion, hallucination, apparition, phantasm, delusion, fantasy, vision]
 generous [bountiful, benevolent, magnanimous, liberal, charitable, lavish, altruistic]
+evil
