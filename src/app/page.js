@@ -17,6 +17,8 @@ export default async function Page() {
     definition = await getWordDefinition(word);
   }
 
+  console.log(definition);
+
   return (
     <Suspense>
       <Game

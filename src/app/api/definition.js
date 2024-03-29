@@ -1,14 +1,23 @@
 export async function getWordDefinition(word) {
   const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
 
+  // Timeout promise
+  const timeoutPromise = new Promise((_, reject) =>
+    setTimeout(
+      () => reject(new Error("Timeout: No response within 5 seconds")),
+      5000
+    )
+  );
+
   try {
-    const response = await fetch(apiUrl);
+    // Race fetch against timeout
+    const response = await Promise.race([fetch(apiUrl), timeoutPromise]);
+
     if (!response.ok) {
       throw new Error(`Error: ${response.status} - Word not found`);
     }
     const data = await response.json();
 
-    // Check if data is valid
     if (
       data.length === 0 ||
       !data[0].meanings ||
@@ -17,18 +26,16 @@ export async function getWordDefinition(word) {
       return "No definition found.";
     }
 
-    // Try to find an adjective definition first
     for (const meaning of data[0].meanings) {
       if (
         meaning.partOfSpeech === "adjective" &&
         meaning.definitions &&
         meaning.definitions.length > 0
       ) {
-        return meaning.definitions[0].definition; // Return the first definition of the adjective meaning
+        return meaning.definitions[0].definition;
       }
     }
 
-    // If no adjective definition was found, return the first definition available
     return data[0].meanings[0].definitions[0].definition;
   } catch (error) {
     console.error(`Failed to fetch definition for ${word}: ${error}`);
