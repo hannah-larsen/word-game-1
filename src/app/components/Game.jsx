@@ -61,10 +61,6 @@ export default function Game({ number = 10, target, synonyms, definition }) {
 
   return (
     <div className="w-full max-w-3xl flex flex-col items-center p-2 gap-4">
-      <p className="font-bold text-center">
-        Definitions are currently not working! The API I&apos;m using to get
-        definitions is currently down.
-      </p>
       <div className="min-h-16 flex justify-center items-center text-center">
         <p className="text-base text-balance">
           {hintCount >= 3 && <b>{scrambledTarget}: </b>}
