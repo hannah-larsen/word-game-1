@@ -3,7 +3,6 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { getGameNumber } from "@/app/utils/manageTime";
-import { getWordDefinition } from "@/app/api/definition";
 import { getDailyWord } from "@/app/utils";
 
 export default async function Page({ params }) {
@@ -15,8 +14,7 @@ export default async function Page({ params }) {
     redirect("/404");
   }
 
-  const { word, synonyms } = await getDailyWord(id);
-  const definition = await getWordDefinition(word);
+  const { word, synonyms, definition } = await getDailyWord(id);
 
   return (
     <Suspense>

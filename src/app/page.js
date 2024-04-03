@@ -8,16 +8,7 @@ import { getDailyWord } from "./utils";
 export default async function Page() {
   const cookieStore = cookies();
   const number = getGameNumber();
-  const { word, synonyms } = await getDailyWord(number);
-
-  let definition = "";
-  if (word === "obtuse") {
-    definition = "Annoyingly insensitive or slow to understand.";
-  } else {
-    definition = await getWordDefinition(word);
-  }
-
-  console.log(definition);
+  const { word, synonyms, definition } = await getDailyWord(number);
 
   return (
     <Suspense>

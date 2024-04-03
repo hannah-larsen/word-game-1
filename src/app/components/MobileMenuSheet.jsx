@@ -22,7 +22,7 @@ export default function MobileMenuSheet() {
         <Button variant="ghost" className="relative">
           <Menu className="mr-2 h-4 w-4" />
           Menu
-          <div className="absolute top-0 right-0 h-2 w-2 bg-blue-500 rounded-full" />
+          {/*<div className="absolute top-0 right-0 h-2 w-2 bg-blue-500 rounded-full" />*/}
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="overflow-scroll">

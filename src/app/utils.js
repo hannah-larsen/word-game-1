@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { getSynonyms } from "./api/datamuse";
+import { getWordDefinition } from "./api/definition";
 
 export async function getRandomWordFromFile() {
   const filePath = path.join(process.cwd(), "./public/filteredWords.txt");
@@ -18,21 +19,45 @@ export async function getDailyWord(dayNumber) {
 
   if (index >= 0 && index < lines.length) {
     const line = lines[index].trim();
-    // Check if the line has synonyms (enclosed in square brackets)
+    let synonyms = null;
+    let definition = null;
+
+    const word = line.split("[")[0].trim();
     if (line.includes("[")) {
-      const [word, synonymsStr] = line.split("[");
-      const synonyms = synonymsStr.slice(0, -1).split(", ");
-      return { word: word.trim(), synonyms };
-    } else {
-      const word = line;
-      // Fetch synonyms if they are not defined
-      const synonyms = await getSynonyms(word);
-      return { word, synonyms };
+      synonyms = line
+        .split("[")[1]
+        .split("]")[0]
+        .trim()
+        .split(", ")
+        .map((syn) => syn.trim());
     }
+    if (line.includes("{")) {
+      console.log("swag");
+      definition = line.split("{")[1].split("}")[0].trim();
+      console.log(definition);
+    }
+
+    if (!synonyms) {
+      synonyms = await getSynonyms(word);
+    }
+
+    if (!definition) {
+      definition = await getWordDefinition(word);
+    }
+
+    return {
+      word: word,
+      synonyms: synonyms || [],
+      definition: definition || "No definition found",
+    };
   } else {
-    // Assuming getRandomWordFromFile is adjusted accordingly
     const word = await getRandomWordFromFile();
     const synonyms = await getSynonyms(word);
-    return { word, synonyms };
+    const definition = await getWordDefinition(word);
+    return {
+      word,
+      synonyms: synonyms || [],
+      definition: definition || "No definition found",
+    };
   }
 }
