@@ -20,3 +20,9 @@ stupor
 glory
 satisfy
 lithe [agile, graceful, supple, limber, loose-limbed, nimble, deft] {(especially of a person's body) thin, supple, and graceful.}
+adept [skilled, skillful, proficient, accomplished, expert, adroit] {(very skilled or proficient at something).}
+ethereal [delicate, exquisite, dainty, elegant, celestial] {(extremely delicate and light in a way that seems too perfect for this world).}
+pithy [concise, succinct, terse, brief, compact, to the point] {(brief, forceful, and meaningful in expression; full of vigor, substance, or meaning).}
+plucky [brave, bold, courageous, valiant, intrepid, fearless] {(having or showing determined courage in the face of difficulties).}
+keen [eager, enthusiastic, fervent, intense, sharp, acute] {(having or showing eagerness or enthusiasm towards something; also refers to something sharp or penetrating, in terms of physical objects or intellectual perceptions).}
+spry [active, lively, energetic, brisk, animated, agile] {(especially of an older person) active; lively and energetic.}
