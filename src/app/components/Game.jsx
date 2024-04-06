@@ -13,6 +13,7 @@ export default function Game({ number = 10, target, synonyms, definition }) {
   const [guessCount, setGuessCount] = useState(0);
   const [hintCount, setHintCount] = useState(0);
   const [gameState, setGameState] = useState("ongoing");
+  const [userInputList, setUserInputList] = useState("");
 
   const scrambledTarget = target.split("").sort().join("");
 
@@ -28,6 +29,8 @@ export default function Game({ number = 10, target, synonyms, definition }) {
       });
     } else {
       setFeedbackMessage("Try again buddy!");
+      var newUserInputList = [...userInputList, " ", userInput];
+      setUserInputList(newUserInputList);
       setUserInput("");
     }
     setGuessCount((guessCount) => guessCount + 1);
@@ -98,7 +101,10 @@ export default function Game({ number = 10, target, synonyms, definition }) {
           hintCount={hintCount}
         />
       )}
-      <p className="text-sm">{feedbackMessage}</p>
+      <p className="text-sm min-h-8">{feedbackMessage}</p>
+      <div className="min-h-12">
+        <p className="text-sm font-light flex justify-center items-center text-center">{userInputList}</p>
+      </div>
       <Button
         variant="ghost"
         className="mt-2"
